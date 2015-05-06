@@ -1,0 +1,102 @@
+﻿@model Minos.Models.Pessoa
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Pessoa</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nome, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nome)
+                @Html.ValidationMessageFor(model => model.Nome)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DataDeNascimento, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DataDeNascimento)
+                @Html.ValidationMessageFor(model => model.DataDeNascimento)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CPF, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CPF)
+                @Html.ValidationMessageFor(model => model.CPF)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Naturalidade, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Naturalidade)
+                @Html.ValidationMessageFor(model => model.Naturalidade)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Altura, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Altura)
+                @Html.ValidationMessageFor(model => model.Altura)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Peso, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Peso)
+                @Html.ValidationMessageFor(model => model.Peso)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Etnia, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Etnia)
+                @Html.ValidationMessageFor(model => model.Etnia)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NivelDeEscolaridade, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NivelDeEscolaridade)
+                @Html.ValidationMessageFor(model => model.NivelDeEscolaridade)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Sexo, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Sexo)
+                @Html.ValidationMessageFor(model => model.Sexo)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
